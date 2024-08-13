@@ -1,0 +1,45 @@
+.button {
+  cursor: pointer;
+  background: #1B75D0;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+
+  &:hover {
+    background: #155CA2;
+  }
+
+  &:active {
+    background: #0C3B6A;
+  }
+}
+
+.link {
+  color: #1A73E8; /* 设置链接颜色 */
+  text-decoration: none; /* 移除默认的下划线 */
+  cursor: pointer; /* 鼠标移入时变成小手 */
+  position: relative; /* 为伪元素设置相对定位 */
+
+  /* 添加伪元素来实现下划线 */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1A73E8;
+    transition: width 0.4s ease-in-out; /* 添加过渡效果 */
+  }
+
+  /* 鼠标移入时改变伪元素的宽度 */
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.input {
+  &:focus {
+    outline: 2px solid #0969DA;
+  }
+}
